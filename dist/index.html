@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proofly is a peer-learning forum where helpful explanations earn on-chain reputation and HELP tokens." />
+  <title>Proofly — Peer learning, rewarded</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Proofly home"><span class="brand-mark">P</span><span>proofly<span class="brand-dot">.</span></span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="feed"><span class="nav-icon">⌂</span><span>Question feed</span></button>
+        <button class="nav-item" data-view="classmates"><span class="nav-icon">◎</span><span>Classmates</span></button>
+        <button class="nav-item" data-view="profile"><span class="nav-icon">◔</span><span>My reputation</span></button>
+      </nav>
+      <div class="course-card">
+        <div class="eyebrow">CURRENT SPACE</div>
+        <div class="course-row"><span class="course-glyph">B</span><div><strong>Blockchain 101</strong><small>24 learners</small></div></div>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="mini-profile"><div class="avatar avatar-lilac">YT</div><div><strong>Yuna Tang</strong><small>Student</small></div><button aria-label="More profile options">•••</button></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" aria-label="Open navigation">☰</button>
+        <div class="network"><span class="status-dot"></span> Sepolia testnet</div>
+        <div class="top-actions">
+          <div class="balance-pill"><span class="token-symbol">H</span><span><strong id="top-balance">28</strong> HELP</span></div>
+          <button class="wallet-button" id="wallet-button"><span class="wallet-dot"></span><span>0x71f...a92E</span></button>
+        </div>
+      </header>
+
+      <section class="view active" id="feed-view">
+        <div class="page-head">
+          <div><div class="eyebrow accent">BLOCKCHAIN 101 / QUESTION BOARD</div><h1>What are we solving?</h1><p>Ask clearly. Explain generously. Learn together.</p></div>
+          <button class="primary-button" id="open-question"><span>＋</span> Ask a question</button>
+        </div>
+
+        <div class="starter-banner" id="starter-banner">
+          <div class="starter-icon">✦</div>
+          <div><strong>Your next 2 bounties are on us.</strong><span>Proofly sponsors your first three questions so you can start learning before you start earning.</span></div>
+          <div class="starter-progress" aria-label="One of three sponsored bounties used"><i class="used"></i><i></i><i></i></div>
+          <button class="icon-button" id="dismiss-banner" aria-label="Dismiss">×</button>
+        </div>
+
+        <div class="filter-row">
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-filter="all">All questions <span id="all-count">6</span></button>
+            <button class="tab" data-filter="open">Open <span id="open-count">4</span></button>
+            <button class="tab" data-filter="answered">Solved <span id="solved-count">2</span></button>
+          </div>
+          <select id="topic-filter" aria-label="Filter by topic"><option value="all">All topics</option><option>Solidity</option><option>Consensus</option><option>Smart Contracts</option><option>Tokenomics</option></select>
+        </div>
+
+        <div class="question-list" id="question-list"></div>
+      </section>
+
+      <section class="view" id="classmates-view">
+        <div class="page-head"><div><div class="eyebrow accent">YOUR LEARNING NETWORK</div><h1>Classmates</h1><p>Discover who is helping the class move forward.</p></div><div class="search-box">⌕ <input id="classmate-search" placeholder="Search classmates" /></div></div>
+        <div class="leader-strip"><div><span>CLASS IMPACT</span><strong>186</strong><small>explanations shared</small></div><div><span>TOPIC COVERAGE</span><strong>12</strong><small>concepts unlocked</small></div><div><span>REWARD POOL</span><strong>420 H</strong><small>available this term</small></div></div>
+        <div class="classmate-grid" id="classmate-grid"></div>
+      </section>
+
+      <section class="view" id="profile-view">
+        <div class="profile-hero">
+          <div class="profile-art"><div class="avatar avatar-lilac avatar-xl">YT</div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div></div>
+          <div class="profile-copy"><div class="eyebrow accent">YOUR ON-CHAIN LEARNING RECORD</div><h1>Yuna Tang</h1><p>Blockchain 101 · Member since Sep 2026</p><div class="wallet-address">0x71f8 ···· a92E <button id="copy-wallet">copy</button></div></div>
+          <div class="profile-balance"><span>AVAILABLE BALANCE</span><strong><span class="token-symbol big">H</span><b id="profile-balance">28</b></strong><small>HELP tokens</small></div>
+        </div>
+        <div class="profile-layout">
+          <div class="panel"><div class="panel-head"><h2>Learning impact</h2><span>This term</span></div><div class="impact-grid"><div><span class="impact-number">9</span><small>answers shared</small></div><div><span class="impact-number">3</span><small>best answers</small></div><div><span class="impact-number">2</span><small>questions asked</small></div><div><span class="impact-number">67%</span><small>helpful rate</small></div></div><div class="milestone"><div class="milestone-top"><span>Next milestone</span><strong>3 / 5 best answers</strong></div><div class="progress"><i style="width:60%"></i></div><p>Two more best answers unlock a <strong>+10 HELP</strong> contribution bonus.</p></div></div>
+          <div class="panel"><div class="panel-head"><h2>Activity</h2><span>Recent</span></div><div class="activity-list"><div><i class="activity-icon won">✓</i><div><strong>Best answer selected</strong><p>Gas optimization · +7 HELP</p></div><time>2d</time></div><div><i class="activity-icon answered">↗</i><div><strong>Explanation submitted</strong><p>Proof of Stake · +1 HELP</p></div><time>4d</time></div><div><i class="activity-icon asked">?</i><div><strong>Question posted</strong><p>Storage vs memory · sponsored</p></div><time>6d</time></div></div></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="question-modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <div class="eyebrow accent">NEW QUESTION</div><h2 id="modal-title">What do you want to understand?</h2><p>Focus on where you are stuck—not just the final answer.</p>
+      <form id="question-form">
+        <label>Question title<input id="question-title" maxlength="90" placeholder="e.g. Why does this reentrancy guard work?" required /></label>
+        <label>Explain where you're stuck<textarea id="question-body" rows="4" maxlength="360" placeholder="Share what you tried and what still feels unclear..." required></textarea></label>
+        <div class="form-row"><label>Topic<select id="question-topic"><option>Solidity</option><option>Consensus</option><option>Smart Contracts</option><option>Tokenomics</option></select></label><fieldset><legend>HELP bounty</legend><div class="bounty-choices"><label><input type="radio" name="bounty" value="3"><span>3 H</span></label><label><input type="radio" name="bounty" value="5" checked><span>5 H</span></label><label><input type="radio" name="bounty" value="7"><span>7 H</span></label></div></fieldset></div>
+        <div class="sponsor-note"><span>✦</span><div><strong>This bounty is sponsored</strong><small>It won't use your HELP balance. You have 2 sponsored questions left.</small></div></div>
+        <button class="primary-button submit-button" type="submit">Post question <span>→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="answer-modal" aria-hidden="true"><div class="modal small" role="dialog" aria-modal="true"><button class="modal-close" data-close-modal aria-label="Close">×</button><div class="eyebrow accent">SHARE AN EXPLANATION</div><h2 id="answer-title">Help a classmate</h2><p>Make the idea click. Your contribution earns 1 HELP.</p><form id="answer-form"><label>Your explanation<textarea id="answer-body" rows="6" minlength="20" placeholder="Walk through your reasoning step by step..." required></textarea></label><button class="primary-button submit-button" type="submit">Submit explanation <span>+1 H</span></button></form></div></div>
+  <div class="toast" id="toast"><span>✓</span><div><strong id="toast-title">Done</strong><small id="toast-message">Your change was saved.</small></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
