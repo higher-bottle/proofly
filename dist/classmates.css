@@ -1,0 +1,113 @@
+.classmate-grid {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  overflow-x: auto;
+  background: #fff;
+}
+
+.classmate-grid .ag-root-wrapper { border: 0; min-width: 920px; }
+.classmate-grid .ag-header-cell,
+.classmate-grid .ag-cell { border-right: 0 !important; }
+.classmate-grid .ag-row { border-bottom: 1px solid var(--line); }
+.classmate-grid .ag-row:last-child { border-bottom: 0; }
+.classmate-grid .ag-header { border-bottom: 1px solid var(--line); }
+.classmate-grid .ag-cell { display: flex; align-items: center; font-size: 12px; }
+.classmate-grid .ag-header-cell-text { font-size: 10px; letter-spacing: .2px; }
+.classmate-grid .ag-cell-value { width: 100%; }
+.classmate-grid .ag-right-aligned-cell { text-align: right; justify-content: flex-end; font-family: "DM Mono"; }
+.rank-cell { font: 600 12px "DM Mono"; color: #65716c; }
+.student-cell { display: flex; align-items: center; gap: 11px; }
+.student-cell .avatar { width: 32px; height: 32px; border-radius: 9px; font-size: 9px; flex: 0 0 auto; }
+.student-cell strong { font-size: 12px; }
+.classmate-profile-trigger { width: max-content; padding: 0; border: 0; background: transparent; color: var(--ink); font-family: inherit; cursor: pointer; text-align: left; }
+.classmate-profile-trigger strong { text-decoration: underline; text-decoration-color: #a9b6ae; text-underline-offset: 3px; }
+.classmate-profile-trigger:hover strong,.classmate-profile-trigger:focus-visible strong { color: #587347; text-decoration-color: #789b39; }
+.classmate-profile-trigger:focus-visible { outline: 2px solid #9fca4f; outline-offset: 4px; border-radius: 6px; }
+.profile-username-link { display: inline; margin: 0; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; font-weight: inherit; cursor: pointer; text-decoration: underline; text-decoration-color: #a9b6ae; text-underline-offset: 3px; }
+.profile-username-link:hover,.profile-username-link:focus-visible { color: #587347; text-decoration-color: #789b39; }
+.profile-username-link:focus-visible { outline: 2px solid #9fca4f; outline-offset: 3px; border-radius: 3px; }
+.sidebar-username { color: #fff; font-size: 13px; font-weight: 700; text-align: left; }
+.sidebar-username:hover,.sidebar-username:focus-visible,.profile-hero-username:hover,.profile-hero-username:focus-visible { color: var(--lime); }
+.profile-hero-username { color: #fff; letter-spacing: -1.5px; }
+.topic-cell { display: inline-flex; align-items: center; width: max-content; min-height: 20px; padding: 2px 8px; border-radius: 4px; background: #eef2eb; color: #56635d; font-size: 9px; line-height: 1.2; font-weight: 600; }
+.ranking-note { display: flex; align-items: center; gap: 12px; margin: 0 0 10px; padding: 0 2px; }
+.ranking-note span { font: 600 10px "DM Mono"; text-transform: uppercase; color: #617053; }
+.ranking-note p { margin: 0; color: var(--muted); font-size: 10px; }
+.classmate-summary strong { font-size: 24px; }
+.classmate-summary div:last-child strong { font-size: 24px; margin-top: 6px; white-space: nowrap; }
+.classmate-profile-modal { width: min(720px,100%); padding: 0; overflow: hidden; background: #f6f8f4; }
+.classmate-profile-modal .modal-close { z-index: 2; color: #d9e2dd; }
+.classmate-profile-hero { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 17px; padding: 29px 31px 25px; background: #1f2d28; color: #fff; }
+.classmate-profile-hero .avatar { width: 66px; height: 66px; border-radius: 50%; font-size: 17px; color: #26332e; }
+.classmate-profile-hero .eyebrow { color: #9caaa4; }
+.classmate-profile-hero h2 { margin: 5px 0 3px; color: #fff; font-size: 24px; }
+.classmate-profile-hero p { margin: 0; color: #aebbb5; font-size: 10px; }
+.classmate-profile-rank { align-self: end; padding: 7px 9px; border: 1px solid #52635b; border-radius: 7px; color: var(--lime); font: 600 10px "DM Mono"; }
+.classmate-profile-metrics { display: grid; grid-template-columns: repeat(4,1fr); margin: 20px 24px 0; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.classmate-profile-metrics div { padding: 16px; border-right: 1px solid var(--line); }
+.classmate-profile-metrics div:last-child { border-right: 0; }
+.classmate-profile-metrics strong,.classmate-profile-metrics span { display: block; }
+.classmate-profile-metrics strong { font: 700 21px "DM Mono"; }
+.classmate-profile-metrics span { margin-top: 4px; color: var(--muted); font-size: 8px; }
+.classmate-profile-section { margin: 14px 24px 0; padding: 18px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.classmate-profile-section:last-child { margin-bottom: 24px; }
+.profile-section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 15px; }
+.profile-section-head span,.strongest-profile-topic span { color: #718078; font: 500 8px "DM Mono"; letter-spacing: .5px; }
+.profile-section-head h3 { margin: 4px 0 0; font-size: 14px; }
+.profile-section-head small { color: var(--muted); font: 500 8px "DM Mono"; }
+.classmate-profile-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.classmate-mini-badge { display: inline-flex; align-items: center; gap: 7px; min-height: 34px; padding: 6px 10px 6px 7px; border: 1px solid #dce2da; border-radius: 8px; background: #f7f9f5; }
+.classmate-mini-badge span { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; background: #1f2d28; color: var(--lime); }
+.classmate-mini-badge strong { font-size: 9px; }
+.classmate-mini-badge.violet span { background: #33294f; color: #cbbcf8; }.classmate-mini-badge.blue span { background: #22394e; color: #9bc7ef; }.classmate-mini-badge.mint span { background: #20463e; color: #8bc8bc; }.classmate-mini-badge.gold span { background: #4b4021; color: #e8c764; }
+.strongest-profile-topic { display: flex; align-items: center; justify-content: space-between; }
+.strongest-profile-topic strong { font-size: 13px; }
+.class-dashboard { display: grid; grid-template-columns: 1.25fr .75fr; gap: 14px; margin: 0 0 22px; }
+.class-chart-panel { min-width: 0; background: #fff; border: 1px solid var(--line); border-radius: 13px; padding: 21px 22px 18px; }
+.class-chart-head { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 12px; }
+.class-chart-head span { color: #718078; font: 500 9px "DM Mono"; text-transform: uppercase; letter-spacing: .5px; }
+.class-chart-head h2 { margin: 5px 0 0; font-size: 15px; }
+.class-chart-head>small { color: #567423; background: #eef6dc; border-radius: 5px; padding: 5px 7px; font: 600 9px "DM Mono"; white-space: nowrap; }
+.chart-controls { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.chart-controls select { border: 1px solid var(--line); border-radius: 7px; background: #f8faf6; color: var(--ink); padding: 7px 24px 7px 8px; font: 600 9px Manrope; outline: 0; }
+.chart-controls select:focus { border-color: #90af56; box-shadow: 0 0 0 2px rgba(199,241,100,.22); }
+.chart-summary { display: flex; justify-content: flex-end; height: 22px; margin-top: -6px; }
+.chart-summary small { color: #567423; background: #eef6dc; border-radius: 5px; padding: 5px 7px; font: 600 9px "DM Mono"; white-space: nowrap; }
+#question-trend-chart { width: 100%; height: 180px; overflow: visible; }
+#question-trend-chart text { fill: #89938e; font: 500 9px "DM Mono"; }
+#question-trend-chart .class-chart-value { fill: #42532d; font-weight: 700; }
+.class-chart-axis { stroke: #dfe5dd; stroke-width: 1; }
+.class-chart-area { fill: rgba(185,214,108,.18); }
+.class-chart-line { fill: none; stroke: #789b39; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.class-chart-point { fill: #fff; stroke: #789b39; stroke-width: 2.5; }
+.topic-pie-wrap { display: grid; grid-template-columns: 132px 1fr; align-items: center; gap: 22px; min-height: 180px; }
+.topic-pie { width: 132px; height: 132px; border-radius: 50%; position: relative; display: grid; place-items: center; }
+.topic-pie::after { content: ""; position: absolute; inset: 18px; border-radius: 50%; background: #fff; }
+.topic-pie>span { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; font: 700 21px "DM Mono"; }
+.topic-pie small { color: var(--muted); font: 500 8px Manrope; }
+.topic-legend { display: flex; flex-direction: column; }
+.topic-legend>div { display: grid; grid-template-columns: 8px 1fr auto auto; gap: 7px; align-items: center; padding: 8px 0; border-bottom: 1px solid #edf0eb; }
+.topic-legend>div:last-child { border-bottom: 0; }
+.topic-legend i { width: 7px; height: 7px; border-radius: 2px; }
+.topic-legend span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 9px; }
+.topic-legend strong { font: 600 10px "DM Mono"; }
+.topic-legend small { color: var(--muted); font: 500 8px "DM Mono"; min-width: 27px; text-align: right; }
+
+@media (max-width: 760px) {
+  .class-dashboard { grid-template-columns: 1fr; }
+  .ranking-note { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .classmate-summary div:last-child strong { white-space: normal; }
+  .classmate-profile-metrics { grid-template-columns: repeat(2,1fr); }
+  .classmate-profile-metrics div:nth-child(2) { border-right: 0; }
+  .classmate-profile-metrics div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+}
+
+@media (max-width: 420px) {
+  .topic-pie-wrap { grid-template-columns: 108px 1fr; gap: 14px; }
+  .topic-pie { width: 108px; height: 108px; }
+  .topic-pie::after { inset: 15px; }
+  .class-chart-head { flex-direction: column; }
+  .chart-controls { justify-content: flex-start; }
+}

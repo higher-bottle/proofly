@@ -1,0 +1,26 @@
+{
+  "name": "proofly-dapp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite dist --host 127.0.0.1 --port 5173",
+    "compile": "hardhat compile",
+    "test:forge": "forge test -vvv",
+    "api": "node --env-file-if-exists=.env server/demo-server.mjs",
+    "test:integration": "node scripts/integration.mjs",
+    "chain": "anvil --host 127.0.0.1 --port 8545 --chain-id 31337",
+    "chain:hardhat": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.cjs --network localhost",
+    "deploy:sepolia": "node --env-file=.env node_modules/hardhat/internal/cli/bootstrap.js run scripts/deploy.cjs --network sepolia"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.1.0",
+    "hardhat": "^2.22.17",
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "ag-grid-community": "^36.2.0"
+  }
+}

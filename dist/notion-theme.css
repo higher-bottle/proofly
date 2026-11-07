@@ -1,0 +1,342 @@
+/* Notion-inspired visual theme. Kept as the final stylesheet so feature-specific
+   styles retain their layout while sharing one calm, neutral color system. */
+:root {
+  --ink: rgba(0, 0, 0, .95);
+  --muted: #615d59;
+  --paper: #f6f5f4;
+  --white: #ffffff;
+  --line: #dedbd8;
+  --lime: #f2f9ff;
+  --lime-dark: #0075de;
+  --purple: #391c57;
+  --lavender: #f3eef7;
+  --peach: #fff0e8;
+  --yellow: #fff7df;
+  --green: #1aae39;
+  --notion-black: rgba(0, 0, 0, .95);
+  --notion-blue: #0075de;
+  --active-blue: #005bab;
+  --focus-blue: #097fe8;
+  --deep-navy: #213183;
+  --warm-dark: #31302e;
+  --warm-gray-500: #615d59;
+  --warm-gray-300: #a39e98;
+  --teal: #2a9d99;
+  --orange: #dd5b00;
+  --pink: #ff64c8;
+  --brown: #523410;
+  --badge-bg: #f2f9ff;
+  --shadow: 0 8px 24px rgba(15, 15, 15, .08);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "PT Serif", Georgia, serif;
+}
+
+/* Navigation */
+.sidebar {
+  width: 300px;
+  background: #ffffff;
+  color: var(--ink);
+  border-right: 1px solid var(--line);
+}
+.brand { color: var(--ink); }
+.brand > span:last-child {
+  font-family: "Caveat", cursive;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.brand-mark {
+  border-radius: 4px;
+  background: var(--notion-black);
+  color: #fff;
+}
+.brand-mark svg { width: 20px; height: 20px; }
+.brand-dot { color: var(--notion-blue); }
+.main { margin-left: 300px; width: calc(100% - 300px); }
+.nav-item {
+  color: var(--warm-gray-500);
+  border-radius: 5px;
+  font-family: "PT Serif", Georgia, serif;
+  font-weight: 400;
+}
+.nav-item:hover { color: var(--ink); background: #efeeec; }
+.nav-item.active {
+  color: var(--active-blue);
+  background: transparent;
+  font-weight: 700;
+}
+.nav-icon { display: grid; place-items: center; }
+.nav-icon svg { width: 20px; height: 20px; display: block; }
+.nav-item:not(.active) .nav-icon svg { opacity: .72; }
+.nav-item.active .nav-icon svg { opacity: 1; }
+.course-card, .sidebar-bottom { border-color: var(--line); }
+.course-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-family: "PT Serif", Georgia, serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.course-heading svg {
+  width: 18px;
+  height: 18px;
+  color: inherit;
+}
+.course-glyph {
+  background: transparent;
+  color: var(--active-blue);
+  border-radius: 5px;
+}
+.course-glyph svg,
+.course-option-glyph svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.course-trigger {
+  color: var(--ink);
+  grid-template-columns: 1fr auto;
+  font-family: "PT Sans", Arial, sans-serif;
+}
+.course-trigger strong { color: var(--ink); }
+.course-trigger .course-code,
+.course-menu .course-code {
+  display: block;
+  color: var(--active-blue);
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.course-menu .course-code { font-size: 8px; }
+.course-trigger .course-title,
+.course-menu .course-title {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.25;
+}
+.course-trigger small,
+.course-chevron { color: var(--warm-gray-300); }
+.course-menu button:hover {
+  background: var(--badge-bg);
+}
+.course-menu {
+  left: 0;
+  width: 100%;
+  font-family: "PT Sans", Arial, sans-serif;
+}
+.course-menu button { grid-template-columns: 1fr auto; }
+.course-menu button.selected {
+  background: var(--badge-bg);
+  box-shadow: none;
+}
+.course-menu button:focus-visible {
+  outline: 2px solid var(--focus-blue);
+  outline-offset: -2px;
+}
+.course-option-glyph {
+  background: transparent;
+  color: var(--active-blue);
+}
+.course-check { color: var(--active-blue); }
+.course-row small, .mini-profile small, .mini-profile button { color: var(--warm-gray-300); }
+.sidebar-bottom,
+.mini-profile,
+.account-popover { font-family: "PT Sans", Arial, sans-serif; }
+.topbar { background: rgba(246, 245, 244, .9); }
+
+/* Fixed product language uses PT Serif. */
+.nav-item,
+.course-heading,
+.tab,
+.primary-button,
+.starter-banner,
+.status-badge,
+.detail-toggle,
+.answer-button,
+.solved-mark,
+.closed-mark,
+.panel-head,
+.impact-controls label,
+.contribution-tabs button,
+.modal label,
+.modal legend,
+.wallet-panel-head,
+.history-table-head,
+.badge-view-tabs button,
+.classmate-grid .ag-header-cell-text {
+  font-family: "PT Serif", Georgia, serif;
+}
+
+/* Display text uses the caption cut of PT Serif. */
+.page-head h1,
+.profile-copy h1,
+.classmate-profile-hero h2,
+.modal h2,
+.contribution-heading h2 {
+  font-family: "PT Serif Caption", "PT Serif", Georgia, serif;
+  font-style: italic;
+}
+
+/* The course context line is the one monospace element in the page heading. */
+#course-board-label {
+  font-family: "PT Mono", "DM Mono", monospace;
+}
+
+/* User-controlled and updateable content uses PT Sans. */
+input,
+textarea,
+select,
+.course-trigger,
+.course-menu,
+.mini-profile,
+.account-popover,
+.question-card,
+.classmate-grid .ag-cell,
+.classmate-profile-trigger,
+.contribution-item,
+.activity-list,
+.profile-copy p,
+.wallet-address,
+.my-answer,
+.selected-best,
+.best-answer {
+  font-family: "PT Sans", Arial, sans-serif;
+}
+
+/* Controls and surfaces */
+.primary-button { background: var(--notion-blue); box-shadow: none; border-radius: 5px; }
+.primary-button:hover { background: var(--active-blue); }
+.primary-button span { color: #ffffff; }
+.outline-button,
+.answer-button,
+.wallet-button,
+.balance-pill,
+.search-box,
+.filter-row select,
+.form-row select { border-color: var(--line); border-radius: 5px; }
+.answer-button:hover { background: var(--badge-bg); border-color: var(--notion-blue); color: var(--active-blue); }
+.tab span, .topic, .skill-tags span { background: #efeeec; color: var(--warm-gray-500); }
+.tab.active:after { background: var(--notion-blue); }
+
+.question-card,
+.classmate-card,
+.panel,
+.contribution-panel,
+.wallet-panel,
+.help-dashboard,
+.help-history,
+.class-chart-panel,
+.badge-library,
+.mint-guide {
+  border-color: var(--line);
+  border-radius: 7px;
+  box-shadow: none;
+}
+.question-card:hover,
+.classmate-card:hover {
+  border-color: #d3d3d1;
+  box-shadow: 0 4px 12px rgba(15, 15, 15, .06);
+}
+
+/* Notion callouts and semantic accents */
+.starter-banner { background: #fff1fa; border-color: #f3b8dc; border-radius: 7px; }
+.starter-icon { background: var(--pink); color: #fff; border-radius: 5px; }
+.starter-banner span { color: var(--warm-gray-500); }
+.starter-progress i.used { background: var(--pink); }
+.sponsor-note { background: #fff1fa; border: 1px solid #f3b8dc; }
+.sponsor-note > span { color: #b31575; }
+.sponsor-note small { color: var(--warm-gray-500); }
+.status-answered { background: #fff1fa; color: #9b175f; }
+.milestone { background: #edf3ec; }
+.progress i { background: var(--green); }
+.activity-icon.won { background: #edf8ef; color: var(--green); }
+.activity-icon.answered { background: #f3eef7; color: var(--purple); }
+.activity-icon.asked { background: #fff0e8; color: var(--orange); }
+.bounty-choices input:checked + span { background: var(--badge-bg); border-color: var(--notion-blue); }
+
+/* A selected best answer uses one blue signal on a clean white surface. */
+.best-answer,
+.selected-best {
+  background: #ffffff;
+  border-left-color: var(--notion-blue);
+}
+.best-answer-head small,
+.best-answer > p,
+.selected-best > p { color: var(--warm-gray-500) !important; }
+.change-best,
+.selected-best > span { color: var(--active-blue); }
+.answer-choice:has(input:checked) {
+  background: #ffffff;
+  border-color: var(--notion-blue);
+  box-shadow: 0 0 0 1px var(--notion-blue);
+}
+.answer-choice input[type="radio"] { accent-color: var(--notion-blue); }
+
+/* Dark summary areas become Notion charcoal rather than green-black. */
+.leader-strip,
+.profile-hero,
+.toast { background: var(--warm-dark); }
+.leader-strip div, .profile-balance { border-color: #5a5954; }
+.leader-strip span, .leader-strip small,
+.profile-copy p, .profile-balance > span, .profile-balance small { color: #c9c8c4; }
+.profile-hero .eyebrow, .wallet-address { color: #d3d2ce; }
+.wallet-address button, .toast > span { color: #72b7f4; }
+.orbit { border-color: #6b6a65; }
+
+/* Inputs, menus, and dialogs */
+.modal-backdrop { background: rgba(15, 15, 15, .48); }
+.modal { background: #ffffff; border-radius: 8px; }
+.modal input, .modal textarea, .modal select { border-radius: 5px; }
+.modal input:focus, .modal textarea:focus, .modal select:focus {
+  border-color: var(--focus-blue);
+  box-shadow: 0 0 0 3px rgba(9, 127, 232, .18);
+}
+.topic-picker-panel,
+.course-menu,
+.account-popover,
+.dmc-range-panel { border-color: var(--line); box-shadow: var(--shadow); }
+.account-popover {
+  left: calc(100% - 26px);
+  right: auto;
+  bottom: calc(100% + 12px);
+  width: 220px;
+  padding: 5px;
+}
+.account-popover button { padding: 8px 10px; }
+
+/* Token and status accents */
+.token-symbol {
+  position: relative;
+  overflow: visible;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 50%;
+  background: transparent url("help-token.svg") center / contain no-repeat;
+  box-shadow: none;
+  color: transparent;
+  font-size: 0;
+}
+.token-symbol::before {
+  content: none;
+}
+.token-symbol::after { content: none; }
+.account-menu-icon.token-symbol { color: transparent; }
+.status-dot, .wallet-dot { background: var(--green); box-shadow: 0 0 0 4px rgba(26, 174, 57, .12); }
+.eyebrow.accent { color: var(--warm-gray-500); }
+
+@media (max-width: 950px) {
+  .main { margin-left: 0; width: 100%; }
+}
+.state, .solved-mark { color: var(--green); }
+
+@media (max-width: 950px) {
+  .sidebar.open { box-shadow: 0 12px 32px rgba(15, 15, 15, .14); }
+}

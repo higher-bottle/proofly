@@ -1,0 +1,1 @@
+{"id":"course-finisher","name":"Course Finisher","description":"Complete every course milestone.","image":"/badges/course-finisher.svg","appearance":{"symbol":"✓","tone":"gold"},"eligibility":{"threshold":10,"label":"course milestones"},"attributes":[{"trait_type":"Achievement","value":"Course complete"}]}

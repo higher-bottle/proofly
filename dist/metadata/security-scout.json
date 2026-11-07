@@ -1,0 +1,1 @@
+{"id":"security-scout","name":"Security Scout","description":"Master smart-contract security.","image":"/badges/security-scout.svg","appearance":{"symbol":"⌁","tone":"mint"},"eligibility":{"threshold":5,"label":"security milestones"},"attributes":[{"trait_type":"Topic","value":"Security"}]}
