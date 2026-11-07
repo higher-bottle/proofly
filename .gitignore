@@ -9,3 +9,4 @@ data/*.sqlite-shm
 data/*.sqlite-wal
 demo-recordings/
 .openai/
+Proofly_Project_Report.*
